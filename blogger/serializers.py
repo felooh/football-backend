@@ -3,9 +3,9 @@ from .models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
+    password = serializers.ReadOnlyField(source = 'user.password')
+    
     class Meta:
-        verbose_name = 'User'
-        verbose_name_plural = 'Users'
         model = User
         fields = '__all__'
         # i want to hide the password

@@ -21,23 +21,5 @@ class PostViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         return PostSerializer
 
-
-    # def get_queryset(self):
-    #     user = self.request.user
-    #     queryset = Post.objects.filter(author=user)
-    #     return queryset
-    # def get_queryset(self):
-    #     user_id = self.kwargs["author_id"]
-    #     return Post.objects.filter(user_id=user_id)
-    
-    # def create(self, request, *args, **kwargs):
-    #     image_file = request.data.get('image')
-    #     if image_file:
-    #         image = Image.open(image_file)
-            
-    #         image.save(image_file.file, format='JPEG')
-    #     return super().create(request, *args, **kwargs)
-
-    
  
 

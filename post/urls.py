@@ -7,11 +7,11 @@ from django.conf.urls.static import static
 
 
 
-
+app_name="post"
 router = routers.DefaultRouter()
-router.register('post', PostViewSet)
+router.register('', PostViewSet, basename="PostViewSet")
 
 urlpatterns = [
     path('', include(router.urls)),
-]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
 

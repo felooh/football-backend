@@ -13,9 +13,22 @@ from PIL import Image
 
 
 class PostViewSet(viewsets.ModelViewSet):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
     parser_classes = [parsers.MultiPartParser, parsers.FormParser, parsers.JSONParser]
+    
+    def get_queryset(self):
+        return Post.objects.filter(author_id=self.request.user.id)
+    
+    def get_serializer_class(self):
+        return PostSerializer
+
+
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     queryset = Post.objects.filter(author=user)
+    #     return queryset
+    # def get_queryset(self):
+    #     user_id = self.kwargs["author_id"]
+    #     return Post.objects.filter(user_id=user_id)
     
     # def create(self, request, *args, **kwargs):
     #     image_file = request.data.get('image')

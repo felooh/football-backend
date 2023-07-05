@@ -11,7 +11,7 @@ def get_upload_path(instance, filename):
 class Post(models.Model):
     category = models.CharField(max_length=15)
     title = models.CharField(max_length=255)
-    content = models.CharField(max_length=1023)
+    content = models.CharField(max_length=100000023)
     image = models.ImageField(upload_to=get_upload_path, blank=True, null=True)    
     author_name = models.CharField(max_length=15)
     author = models.ForeignKey(User,on_delete=models.CASCADE, related_name="author", blank=True, null=True)

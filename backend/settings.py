@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "post",
     "authJWT",
     "rest_framework_simplejwt",
+    "media",
     
 ]
 
@@ -196,5 +197,5 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
 
-MEDIA_URL = "/media/"
+MEDIA_URL =  "/media/"
 MEDIA_ROOT =  BASE_DIR / 'media'

@@ -196,5 +196,5 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
 
-MEDIA_URL = "http://localhost:8000/media/"
+MEDIA_URL = "/media/"
 MEDIA_ROOT =  BASE_DIR / 'media'

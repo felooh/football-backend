@@ -1,10 +1,12 @@
 from django.db import models
+import os
 from PIL import Image
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import UserManager
 
-
+def get_upload_path(instance, filename):
+    return os.path.join("images","blogger_images", str(instance.pk), filename)
 
 class CustomUserManager(UserManager):
     def create_superuser(self, email=None, password=None, **extra_fields):
@@ -19,7 +21,7 @@ class User(AbstractUser):
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=255, unique=True)
     password = models.CharField(max_length=255)
-    profile_pic = models.ImageField(blank= True,null=True)
+    profile_pic = models.ImageField(upload_to=get_upload_path, blank= True,null=True)
     gender = models.CharField(blank= True,max_length=15, null=True)
     mobile = models.IntegerField(blank= True, null=True)
     location = models.CharField(max_length=15,blank= True, null=True)

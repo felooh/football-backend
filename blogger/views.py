@@ -1,5 +1,5 @@
 from rest_framework.views import APIView
-from rest_framework import viewsets
+from rest_framework import viewsets, parsers
 from rest_framework.response import Response
 from .serializers import UserSerializer
 from .models import *
@@ -13,8 +13,11 @@ from rest_framework.exceptions import NotFound
 
 
 
+
 # Create your views here.
 class UsersViewSet(viewsets.ModelViewSet):
+    parser_classes = [parsers.MultiPartParser, parsers.FormParser, parsers.JSONParser]
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
         

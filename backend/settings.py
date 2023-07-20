@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "authJWT",
     "rest_framework_simplejwt",
     "media",
+    "product",
     
 ]
 

@@ -7,10 +7,6 @@ from django.contrib.auth.models import UserManager
 def get_upload_path(instance, filename):
     return os.path.join("images","blogger_images", str(instance.pk), filename)
 
-
-
-
-
 class User(AbstractUser):
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=255, blank=True)

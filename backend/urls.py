@@ -36,4 +36,6 @@ urlpatterns = [
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     path('api/v2/', include('product.urls')),
     path('api/v2/', include('order.urls')),
+    path('mpesa/', include('mpesa.urls')),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

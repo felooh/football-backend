@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     "media",
     "product",
     "order",
-    "django_daraja",
     "mpesa",
 ]
 
